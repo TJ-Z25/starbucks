@@ -1,8 +1,8 @@
 ---
-title: Starbucks Analysis Report
-author: Tianjie Zhang
-output: html_document
-date: 2025-04-04
+Title: Starbucks Analysis Report
+Author: Tianjie Zhang
+Output: html_document
+Date: 2025-04-04
 ---
 
 # Starbucks Nutritional Analysis
@@ -82,6 +82,8 @@ R with the following packages:
   here
   rmarkdown
   tidyr
+
+### Users should use `cd` in their terminal to navigate to a directory where they wish to download this repository
 
 ### Using Make
 The entire analysis can be run using the provided Makefile:
