@@ -103,3 +103,25 @@ The entire analysis can be run using the provided Makefile:
 
   `make clean`
   
+## Environment Reproducibility
+
+This project uses the `renv` package to ensure reproducible environments across different systems.
+
+### Setting up the environment
+
+1. Clone this repository
+2. Open the project in RStudio
+3. Run `make install` in the terminal or execute `renv::restore()` in R console
+4. All required packages with the correct versions will be installed automatically
+
+This ensures that you'll have exactly the same package versions that were used to create this analysis.
+
+### Managing package changes
+
+If you need to add new packages to the project:
+
+1. Install the new package using `install.packages("package_name")`
+2. Run `renv::snapshot()` to update the lockfile with the new dependency
+3. Commit the updated renv.lock file to the repository
+
+For more information on renv, see the [official documentation](https://rstudio.github.io/renv/).

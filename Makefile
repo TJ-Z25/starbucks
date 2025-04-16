@@ -1,3 +1,7 @@
+# Rule to restore the R package environment
+install:
+	Rscript -e "renv::restore()"
+
 output/starbucks_analysis_report.html: code/04_render_report.R output/table_summary.rds output/calories_boxplot.png output/top5_calories.rds
 	Rscript code/04_render_report.R
 	
