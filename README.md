@@ -128,7 +128,7 @@ The entire analysis can be run using the provided Makefile:
   `make clean`
   
 ## DockerHub
-The Docker image is available on DockerHub at: tjz25/starbucks
+The Docker image is available on DockerHub at: [tjz25/starbucks](https://hub.docker.com/repository/docker/tjz25/starbucks)
 
 ## Notes for Windows Users
 Windows users running Git Bash may need to be aware of path formatting issues when mounting volumes. If you encounter problems, ensure paths are formatted correctly with forward slashes.
