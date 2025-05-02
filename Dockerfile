@@ -1,9 +1,9 @@
 FROM rocker/verse:4.4.1
 
-# 工作目录
+# Working Directory
 WORKDIR /project
 
-# 安装所有需要的R包
+# Install all required R packages
 RUN install2.r --error --deps TRUE \
     dplyr \
     readr \
@@ -13,13 +13,11 @@ RUN install2.r --error --deps TRUE \
     kableExtra \
     here
 
-# 复制项目文件
+# Copying project files
 COPY . /project/
 
-
-# 创建输出目录
+# Creating an output directory
 RUN mkdir -p /project/output
 RUN mkdir -p /report
 
-# 命令
 CMD make all
