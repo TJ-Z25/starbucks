@@ -69,11 +69,25 @@ The dataset contains 242 observations of Starbucks beverages across 18 variables
   Renders R Markdown document into HTML report
   Incorporates all analysis components
   Presents findings in a structured format
+  
+## Docker Image
+### Building the Docker Image
+To build the Docker image, run:
+`make docker-build`
+This will create a Docker image tagged as tjz25/starbucks:latest based on the rocker/verse:4.4.1 base image, which includes R, RStudio, and the tidyverse packages.
 
 ## How to Run the Analysis
+### Running the Analysis
+To run the analysis and generate the report, use:
+`make docker-run`
 
-### Prerequisites
-R with the following packages:
+This command will:
+Mount a report directory from your local machine to the container
+Execute the R scripts to perform the analysis
+Generate an HTML report and save it to the mounted report directory
+
+### Required R Packages
+The analysis uses the following R packages, which are automatically installed in the Docker image:
 
   readr
   dplyr
@@ -83,7 +97,14 @@ R with the following packages:
   rmarkdown
   tidyr
 
-### Users should use `cd` in their terminal to navigate to a directory where they wish to download this repository
+### Repository Structure
+code/: R scripts for data cleaning and analysis
+Dockerfile: Instructions for building the Docker image
+Makefile: Build automation for the project
+starbucks.csv: Raw data file
+final_project_starbucks.Rmd: R Markdown file for the final report
+
+Users should use `cd` in their terminal to navigate to a directory where they wish to download this repository
 
 ### Using Make
 The entire analysis can be run using the provided Makefile:
@@ -105,25 +126,8 @@ The entire analysis can be run using the provided Makefile:
 
   `make clean`
   
-## Environment Reproducibility
+## DockerHub
+The Docker image is available on DockerHub at: tjz25/starbucks
 
-This project uses the `renv` package to ensure reproducible environments across different systems.
-
-### Setting up the environment
-
-1. Clone this repository
-2. Open the project in RStudio
-3. Run `make install` in the terminal or execute `renv::restore()` in R console
-4. All required packages with the correct versions will be installed automatically
-
-This ensures that you'll have exactly the same package versions that were used to create this analysis.
-
-### Managing package changes
-
-If you need to add new packages to the project:
-
-1. Install the new package using `install.packages("package_name")`
-2. Run `renv::snapshot()` to update the lockfile with the new dependency
-3. Commit the updated renv.lock file to the repository
-
-For more information on renv, see the [official documentation](https://rstudio.github.io/renv/).
+##Notes for Windows Users
+Windows users running Git Bash may need to be aware of path formatting issues when mounting volumes. If you encounter problems, ensure paths are formatted correctly with forward slashes.
