@@ -114,13 +114,14 @@ The entire analysis can be run using the provided Makefile:
   `make`
 
 #### To generate individual components:
-
+```bash
   `make output/data_clean.rds`                 # Clean data
   `make output/table_summary.rds`              # Generate summary tables
   `make output/calories_boxplot.png`           # Create visualizations
   `make descriptive_analysis`                  # Run descriptive analysis
   `make graphical_analysis`                    # Run graphical analysis
   `make output/starbucks_analysis_report.html` # Render final report
+```
 
 #### To clean all generated files:
 
